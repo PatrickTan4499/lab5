@@ -1,5 +1,13 @@
 'use strict';
 
+$(document).ready(function() {
+	$( ".name" ).on( "click", function( event ) {
+		event.preventDefault();
+		var name = $(this).text();
+		$(this).text(anagrammedName(name));
+	});
+})
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -44,3 +52,14 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+
+/*
+function projectClick(e){
+	e.preventDefault();
+	//var friend = $(this).closest(".friend");
+	var friend = $(this).closest(".friend");
+	var name = $(this).text();
+	var newname = anagrammedName(name);
+	$(this).text(newname);
+}*/
